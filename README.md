@@ -18,22 +18,21 @@ This project aims to detect and recognize Indian Sign Language (ISL) gestures us
 [https://www.kaggle.com/datasets/prathumarikeri/indian-sign-language-isl](https://www.kaggle.com/datasets/prathumarikeri/indian-sign-language-isl)
 
 ---
-**Project structure 
+**Project Structure**
 
 SignSpeak/
-├── dataset/                         # Raw gesture images
-├── images/                          # Sample images and gesture examples
-├── keypoint.csv                     # Extracted 42 hand landmark coordinates for training
-│
-├── ISL_classifier.ipynb             # Jupyter Notebook for training and evaluation
-├── model.h5                         # Final trained ISL classification model
-│
-├── isl_detection.py                 # Real-time ISL gesture recognition script
-├── dataset_keypoint_generation.py   # Script to generate and preprocess keypoints from dataset
-│
+├── dataset/                         # Raw ISL gesture images
+├── images/                          # Sample images for reference
+├── keypoint.csv                     # Extracted 42 hand landmarks in CSV format
+
+├── ISL_classifier.ipynb             # Model training Jupyter notebook
+├── model.h5                         # Trained gesture recognition model
+
+├── isl_detection.py                 # Real-time detection and prediction script
+├── dataset_keypoint_generation.py   # Script to generate hand keypoints from dataset
+
 ├── requirements.txt                 # Python dependencies
 └── README.md                        # Project documentation
-
 ---
 
 ## **How It Works**
