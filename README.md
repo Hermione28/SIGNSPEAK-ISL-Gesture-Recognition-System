@@ -67,8 +67,8 @@ During execution, the program uses the webcam to capture video frames, applies t
 - `model.h5`: This is the classifier model.
 
 ### Examples
-![example image 1](ASSETS/example1.png)
-![example image 2](ASSETS/example2.png)
+![example image 1](ASSETS/Example1.png)
+![example image 2](ASSETS/Example2.png)
 
 ### Future Improvements
 
@@ -79,5 +79,6 @@ The following improvements can be made to the project:
 - Add support for more ISL gestures.
 - Implement a feature to convert the recognized gestures into text or speech.
 - Make the program more user-friendly by adding a GUI.
+
 
 
