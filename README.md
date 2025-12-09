@@ -1,126 +1,83 @@
-# SignSpeak – ISL Gesture Recognition System 
 
 
+## Indian Sign Language Detection using Mediapipe
 
-## **Description**
+This project is aimed at detecting and recognizing Indian Sign Language (ISL) gestures using the Mediapipe library. The project is implemented in Python.
+![All gestures covered by project](images/allGestures.png)
 
-This project aims to detect and recognize Indian Sign Language (ISL) gestures using **Mediapipe**, **OpenCV**, and **Machine Learning**. The system extracts hand landmarks in real time and classifies them using a trained neural network. The repository includes code for dataset preprocessing, keypoint extraction, model training, and real-time ISL gesture prediction.
+### Requirements
 
----
+To run this project, you will need the following dependencies:
 
-## **Overview**
+- Python 3.6 or higher
+- Mediapipe library
+- OpenCV library
+- Numpy library
 
-**Dataset:** Indian Sign Language Dataset – Kaggle
-**Programming Language:** Python
-**Libraries Used:** Mediapipe, OpenCV, NumPy, TensorFlow/Keras
+### Installation
 
-**Dataset Link:**
-[https://www.kaggle.com/datasets/prathumarikeri/indian-sign-language-isl](https://www.kaggle.com/datasets/prathumarikeri/indian-sign-language-isl)
----
+1. Install Python 3.6 or higher on your system.
+2. Install the Mediapipe library using the following command:
 
-## **How It Works**
+   ```
+   pip install mediapipe
+   ```
 
-The system uses **Mediapipe Hands** to detect hand and finger landmarks from webcam input in real time. These extracted **42 keypoints** are fed into a trained **feedforward neural network (FNN)**, which predicts the ISL gesture class.
+3. Install the OpenCV library using the following command:
 
-**Workflow:**
+   ```
+   pip install opencv-python
+   ```
 
-1. Webcam captures a live video frame.
-2. Mediapipe detects the hand and extracts 21 keypoints per hand.
-3. Extracted coordinates are normalized and passed to the trained classifier.
-4. The model predicts the gesture class.
-5. The predicted result is displayed on the video stream in real time.
+4. Install the Numpy library using the following command:
 
----
+   ```
+   pip install numpy
+   ```
 
-## **Requirements**
+### Usage
 
-* Python 3.6 or higher
-* Mediapipe
-* OpenCV
-* Numpy
-* TensorFlow / Keras
+1. Clone the repository to your local machine.
 
----
+2. Open the command prompt and navigate to the cloned directory.
 
-## **Installation**
+3. Run the following command to start the program:
 
-1. Install Python (3.6+).
-2. Run the following commands:
+   ```
+   python isl_detection.py
+   ```
 
-```
-pip install mediapipe
-pip install opencv-python
-pip install numpy
-pip install tensorflow
-```
+4. The program will start and display the video stream from the webcam.
 
----
+5. To exit the program, press the 'q' key.
 
-## **Usage**
+### How it works
 
-1. Clone the repository.
-2. Open a terminal in the project directory.
-3. Run the real-time detection script:
+The program uses the Mediapipe library to detect landmarks on the hand and fingers of the user in real-time. These landmarks are then fed into a feedforward neural network (FNN) that was trained on an Indian Sign Language (ISL) dataset from Kaggle. The FNN predicts the class of the hand gesture based on the detected landmarks.
 
-```
-python isl_detection.py
-```
+During execution, the program uses the webcam to capture video frames, applies the Mediapipe hand detection model to detect the hand in each frame, and extracts the hand landmarks. The extracted landmarks are then passed to the classification model, which predicts the class of the hand gesture. The predicted class is displayed on the video stream in real-time.
 
-4. Press **‘q’** to exit the program.
+![Process image](images/process.png)
 
----
+## File Descriptions
 
-## **Examples**
+- `isl_detection.py`: This file is the main python file for real-time ISL detection.
+- `dataset_keypoint_generation.py`: This file converts [ISL kaggle image dataset](https://www.kaggle.com/datasets/prathumarikeri/indian-sign-language-isl) to 42 landmarks.
+- `keypoint.csv`: This file contains the 42 landmarks for all images.
+- `ISL_classifier.ipynb`: The notebook is used to create a classifier model to classify the hand gestures.
+- `model.h5`: This is the classifier model.
 
-![Example1](ASSETS/Example1.png)
-![Example2](ASSETS/Example2.png)
+### Examples
+![example image 1](images/example1.png)
+![example image 2](images/example2.png)
 
----
+### Future Improvements
 
-## **Next Steps**
+The following improvements can be made to the project:
 
-⚙️ **Accuracy Improvement:**
-Experiment with CNN, LSTM, or hybrid models to improve classification accuracy.
-
-📂 **Dataset Expansion:**
-Add more samples and new gesture categories.
-
-🔊 **Speech/Text Output:**
-Convert recognized gestures into text or speech for communication support.
-
-🖥️ **GUI Integration:**
-Add a user-friendly interface for real-time interaction.
-
-🚀 **Model Deployment:**
-Deploy the system as a web application or Android app using TensorFlow Lite.
-
-🤝 **Contributions:**
-Fork the repository, create a new branch, and submit a pull request.
-Issues can be opened for bugs, enhancements, or new features.
-
----
-
-## **Acknowledgments**
-
-* Dataset sourced from **Kaggle – Indian Sign Language Dataset**.
-* Thanks to the Mediapipe and TensorFlow teams for powerful open-source tools.
-
----
-
-## **Author**
-
-Prajakta Jagdale
-
-[LinkedIn](www.linkedin.com/in/prajakta-jagdale-665a0a257)
-
-[GitHub](https://github.com/Hermione28)
-
----
-
-## **About**
-
-A real-time ISL detection system developed using **Mediapipe** and **Machine Learning**.
-Includes dataset processing, landmark extraction, model training, and real-time prediction — useful for gesture recognition, accessibility tools, and ISL communication.
-
----
+- Expand the dataset to include more examples of each ISL gesture to improve the accuracy of the classification model.
+- Implement a more sophisticated model architecture, such as a convolutional neural network (CNN), to improve the accuracy of the classification model.
+- Add support for more ISL gestures.
+- Implement a feature to convert the recognized gestures into text or speech.
+- Make the program more user-friendly by adding a GUI.
 
