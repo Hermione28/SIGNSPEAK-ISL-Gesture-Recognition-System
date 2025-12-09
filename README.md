@@ -30,8 +30,6 @@ The system uses **Mediapipe Hands** to detect hand and finger landmarks from web
 4. The model predicts the gesture class.
 5. The predicted result is displayed on the video stream in real time.
 
-image (gesture process)
-
 ---
 
 ## **Requirements**
